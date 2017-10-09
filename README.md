@@ -1,6 +1,7 @@
 # 手写 图层式 轮播图
 
 核心部分的代码只有不到 150行, 就可以写一个简单的轮播图, 通过图层叠加的方式.
+在线查看: https://cyanglory.github.io/Layer-carousel-handwriting/
 
 ## 效果图
 
