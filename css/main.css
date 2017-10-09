@@ -1,0 +1,120 @@
+html,
+body,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#carousel {
+  position: relative;
+  height: 40vh;
+  min-height: 450px;
+  max-height: 60vh;
+  width: auto;
+  overflow: hidden;
+  background-color: #333;
+}
+#carousel .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item {
+  position: absolute;
+  max-width: 100%;
+  height: auto;
+  transition: left 2s ease-in-out;
+  /* opacity: 0.8; */
+}
+
+.flex-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  min-height: 3em;
+  max-height: calc(100vh - 450px);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* 小屏幕竖屏 */
+@media (max-width: 450px) {
+  #carousel {
+    height: 200px;
+    min-height: 30vw;
+    max-height: 60vh;
+  }
+
+  .flex-wrapper {
+    height: initial;
+  }
+}
+/* 小屏幕横屏 */
+@media (max-height: 450px ) {
+  #carousel {
+    min-height: 300px;
+    max-height: 60vh;
+  }
+}
+/* base - css - end */
+
+/* status-bar - start */
+#carousel .status-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1.6em;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#carousel .status-bar:hover {
+  opacity: 1;
+}
+/* clear width bug: 伪元素会导致无法在 .control 上添加事件 */
+/* #carousel .status-bar::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+  opacity: 0.5;
+} */
+
+#carousel .control {
+  width: 12em;
+  height: 100%;
+  list-style: none;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#carousel .carousel-index {
+  width: 3em;
+  height: 1em;
+  border-radius: 0.2em;
+  background-color: #80cbc4;
+  opacity: 0.5;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+}
+#carousel .carousel-index.active {
+  background-image: url('./../image/teal.png');
+  opacity: 1;
+}
